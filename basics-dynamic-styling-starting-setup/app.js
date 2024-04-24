@@ -6,6 +6,12 @@ Vue.createApp({
       boxCSelected: false,
     };
   },
+  computed: {
+    //NB: only for complex styling
+    boxAClasses() {
+      return { active: this.boxASelected };
+    },
+  },
   methods: {
     boxSelected(box) {
       if (box === "A") {
