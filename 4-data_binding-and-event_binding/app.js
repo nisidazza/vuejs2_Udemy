@@ -19,6 +19,13 @@ const app = Vue.createApp({
     resetInput() {
       this.name = "";
     },
+    // it's not bound to an event, so it returns something
+    outputFullname() {
+      if (this.name === "") {
+        return "";
+      }
+      return this.name + " " + "Smith";
+    },
   },
 });
 
