@@ -6,15 +6,15 @@ Vue.createApp({
       boxCSelected: false,
     };
   },
-  methods:{
+  methods: {
     boxSelected(box) {
-        if (box === "A") {
-          this.boxASelected = true;
-        } else if (box === "B") {
-          this.boxBSelected = true;
-        } else if (box === "C") {
-          this.boxCSelected = true;
-        } 
-    }
-  }
+      if (box === "A") {
+        this.boxASelected = !this.boxASelected;
+      } else if (box === "B") {
+        this.boxBSelected = !this.boxBSelected;
+      } else if (box === "C") {
+        this.boxCSelected = !this.boxCSelected;
+      }
+    },
+  },
 }).mount("#styling");
