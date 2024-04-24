@@ -3,30 +3,37 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: "",
-      fullname: "",
+      // fullname: "",
+      lastName: "",
     };
   },
   // use watch to perfrom "side effects"
   // a watcher is a method that watches a data property with the same name and runs every time that data property value changes.
   watch: {
-    name(value) {
-      if (value === "") {
-        return (this.fullname = "");
-      }
-      this.fullname = value + " " + "Pippo";
-    },
-    // OR: name(newValue, oldValue) {....}
+    // name(value) {
+    //   if (value === "") {
+    //     return (this.fullname = "");
+    //   }
+    //   this.fullname = value + " " + this.lastName;
+    // },
+    // // OR: name(newValue, oldValue) {....}
+    // lastName(value) {
+    //   if (value === "") {
+    //     return (this.fullname = "");
+    //   }
+    //   this.fullname = this.name + " " + value;
+    // },
   },
   // Used them to improve performance, for outputting values (in most cases)
   // Vue cached the computed property value, and only re-calculate and re-evaluate it if the dependency (in this case name) changed.
   computed: {
-    // fullname() {
-    //   console.log("Running again");
-    //   if (this.name === "") {
-    //     return "";
-    //   }
-    //   return this.name + " " + "Smith";
-    // },
+    fullname() {
+      console.log("Running again");
+      if (this.name === "" || this.lastName === "") {
+        return "";
+      }
+      return this.name + " " + this.lastName;
+    },
   },
   // Use methods when you know you want to recalculate a value whenever anything on the page changed.
   methods: {

@@ -25,6 +25,7 @@
       <!-- <input type="text" v-bind:value="name" v-on:input="setName($event, 'Schwarzmüller')"> -->
       <!-- TWO WAY BINDING: the v-model wants only the data property. It's a shortcut for v-bind:value and v-on:input-->
       <input type="text" v-model="name">
+      <input type="text" v-model="lastName">
       <button v-on:click="resetInput">Reset Input</button>
       <!-- NB: the below method is re-executed by Vue everytime that something changes on the page (e.g:counter) -->
       <!-- <p>Your Name: {{ outputFullname() }}</p> -->
