@@ -26,8 +26,11 @@
       <!-- TWO WAY BINDING: the v-model wants only the data property. It's a shortcut for v-bind:value and v-on:input-->
       <input type="text" v-model="name">
       <button v-on:click="resetInput">Reset Input</button>
-      <!-- NB: this method is re-executed by Vue everytime that something changes on the page (e.g:counter) -->
-      <p>Your Name: {{ outputFullname() }}</p>
+      <!-- NB: the below method is re-executed by Vue everytime that something changes on the page (e.g:counter) -->
+      <!-- <p>Your Name: {{ outputFullname() }}</p> -->
+      <!-- Solution: computed properties. Vue is aware of their dependencies and only re-execute them if one of the dependencies change -->
+      <!-- IMPORTANT: without parantheses!!! We're just pointing at it, Vue is going to call it!  -->
+      <p>Your Name: {{ fullname }}</p>
     </section>
   </body>
 </html>
