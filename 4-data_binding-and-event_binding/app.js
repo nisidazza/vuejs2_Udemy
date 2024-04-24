@@ -9,7 +9,16 @@ const app = Vue.createApp({
   },
   // use watch to perfrom "side effects"
   // a watcher is a method that watches a data property with the same name and runs every time that data property value changes.
+  // best case scenarios: HTTP requests, timers,
   watch: {
+    counter(value) {
+      if (value > 50) {
+        // this.counter = 0;
+        setTimeout(() => {
+          this.counter = 0;
+        }, 2000);
+      }
+    },
     // name(value) {
     //   if (value === "") {
     //     return (this.fullname = "");
