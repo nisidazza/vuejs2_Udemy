@@ -32,6 +32,8 @@
       <!-- Solution: computed properties. Vue is aware of their dependencies and only re-execute them if one of the dependencies change -->
       <!-- IMPORTANT: without parantheses!!! We're just pointing at it, Vue is going to call it!  -->
       <p>Your Name: {{ fullname }}</p>
+      <br/>
+      <img v-bind:src="image" style="height: 400px; width: 600px;"/>
     </section>
   </body>
 </html>

@@ -5,6 +5,8 @@ const app = Vue.createApp({
       name: "",
       // fullname: "",
       lastName: "",
+      image:
+        "vue_methods_vs_computed_vs_watchers.png",
     };
   },
   // use watch to perfrom "side effects"
