@@ -1,6 +1,10 @@
 const app = Vue.createApp({
   data() {
-    return { enteredGoalValue: "", goals: [] };
+    return {
+      enteredGoalValue: "",
+      goals: [],
+      user: { name: "Cindy", age: "35" },
+    };
   },
   methods: {
     addGoal() {
