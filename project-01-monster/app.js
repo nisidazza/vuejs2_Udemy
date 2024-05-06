@@ -50,7 +50,7 @@ Vue.createApp({
       this.monsterHealth = 100;
       this.currentRound = 0;
       this.winner = null;
-      logMessages = [];
+      this.logMessages = [];
     },
     attackMonster() {
       this.currentRound++;
