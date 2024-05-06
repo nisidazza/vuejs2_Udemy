@@ -39,7 +39,7 @@
         <button v-on:click="attackMonster">ATTACK</button>
         <button v-bind:disabled="specialAttackDisabled" v-on:click="specialAttackMonster">SPECIAL ATTACK</button>
         <button v-on:click="healPlayer">HEAL</button>
-        <button>SURRENDER</button>
+        <button v-on:click="surrender">SURRENDER</button>
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
