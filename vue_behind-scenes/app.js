@@ -10,7 +10,10 @@ const app = Vue.createApp({
       this.currentUserInput = event.target.value;
     },
     setText() {
-      this.message = this.currentUserInput;
+      // this.message = this.currentUserInput;
+      this.message = this.$refs.userText.value;
+      //this points to the DOM object for the input element
+      // with ref we avoid firing the input with every key stroke
     },
   },
 });
