@@ -16,9 +16,50 @@ const app = Vue.createApp({
       // with ref we avoid firing the input with every key stroke
     },
   },
+
+  // --- LIFECYCLE HOOKS ---
+
+  // vue app not fully initialized
+  beforeCreate() {
+    console.log("beforeCreate()");
+  },
+  // vue app initialized internally but not mounted
+  created() {
+    console.log("created()");
+  },
+  // triggered right before the app is mounted (before we see something on the screen)
+  beforeMount() {
+    console.log("beforeMount()");
+  },
+  // output shown on the screen
+  mounted() {
+    console.log("mounted()");
+  },
+
+  // --- HOOKS TRIGGERED BY DATA CHANGES ---
+
+  // changes not shown yet
+  beforeUpdate() {
+    console.log("beforeUpdate()");
+  },
+  // update fully processed
+  updated() {
+    console.log("updated()");
+  },
+  // --- UNMOUNTED HOOKS ---
+  beforeUnmount() {
+    console.log("beforeUnmoun()");
+  },
+  unmounted() {
+    console.log("unmounted()");
+  },
 });
 
 app.mount("#app");
+
+setTimeout(() => {
+  app.unmount();
+}, 3000);
 
 const app2 = Vue.createApp({
   template: `
